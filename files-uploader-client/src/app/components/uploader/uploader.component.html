@@ -1,0 +1,18 @@
+<div class="uploader-wrapper">
+  <mat-card>
+    <mat-card-title>Select file</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="formGroup" (ngSubmit)="submit()">
+        <mat-form-field>
+          <div class="uploader-input">
+            <ngx-mat-file-input formControlName="file" id="file" type="file" class="form-control"
+              [accept]="constants.length === 0 ? '*' : constants">
+            </ngx-mat-file-input>
+          </div>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="formGroup.invalid">Upload</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
